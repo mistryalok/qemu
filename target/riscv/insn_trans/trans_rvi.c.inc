@@ -687,6 +687,11 @@ static bool trans_and(DisasContext *ctx, arg_and *a)
     return gen_logic(ctx, a, tcg_gen_and_tl);
 }
 
+static bool trans_asd(DisasContext *ctx, arg_asd *a)
+{
+    return gen_logic(ctx, a, tcg_gen_asd_tl);
+}
+
 static bool trans_addiw(DisasContext *ctx, arg_addiw *a)
 {
     REQUIRE_64_OR_128BIT(ctx);

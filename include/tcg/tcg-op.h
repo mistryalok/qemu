@@ -417,6 +417,12 @@ static inline void tcg_gen_and_i32(TCGv_i32 ret, TCGv_i32 arg1, TCGv_i32 arg2)
     tcg_gen_op3_i32(INDEX_op_and_i32, ret, arg1, arg2);
 }
 
+static inline void tcg_gen_asd_i32(TCGv_i32 ret, TCGv_i32 arg1, TCGv_i32 arg2)
+{
+    printf("\nCustom instruction is called\n");
+    tcg_gen_op3_i32(INDEX_op_and_i32, ret, arg1, arg2);
+}
+
 static inline void tcg_gen_or_i32(TCGv_i32 ret, TCGv_i32 arg1, TCGv_i32 arg2)
 {
     tcg_gen_op3_i32(INDEX_op_or_i32, ret, arg1, arg2);
@@ -1159,6 +1165,7 @@ void tcg_gen_stl_vec(TCGv_vec r, TCGv_ptr base, TCGArg offset, TCGType t);
 #define tcg_gen_subfi_tl tcg_gen_subfi_i32
 #define tcg_gen_subi_tl tcg_gen_subi_i32
 #define tcg_gen_and_tl tcg_gen_and_i32
+#define tcg_gen_asd_tl tcg_gen_asd_i32
 #define tcg_gen_andi_tl tcg_gen_andi_i32
 #define tcg_gen_or_tl tcg_gen_or_i32
 #define tcg_gen_ori_tl tcg_gen_ori_i32

@@ -1,0 +1,1 @@
+../configure --target-list=riscv32-softmmu --prefix=/home/$USER/prog/qemu_riscv
